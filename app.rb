@@ -13,7 +13,8 @@ EventMachine.run do     # <-- Changed EM to EventMachine
   EventMachine::WebSocket.start(:host => '0.0.0.0', :port => 8080) do |ws| # <-- Added |ws|
       # Websocket code here
       @github_client = GithubApi.new
-      
+      @github_events = nil
+      timer = nil
       ws.onopen {
           #ws.send "connected!!!!"
           puts "Ping supported: #{ws.pingable?}"
@@ -43,5 +44,5 @@ EventMachine.run do     # <-- Changed EM to EventMachine
 
   end
 
-  App.run!({:port => 3000})
+  App.run!()#{:port => 3000}
 end
