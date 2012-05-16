@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 gem 'rack'
 gem 'em-websocket'
+gem 'octokit'
 gem 'sinatra'
 gem 'thin'
