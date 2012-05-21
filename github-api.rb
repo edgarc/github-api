@@ -35,12 +35,12 @@ class GithubApi
           puts e
         end
       end
-      normalize_event(event, repo)
+      flatten_event(event, repo)
     end
   end
   
   #create a list of unique events like this: event_id	event_type user repo watchers	language
-  def normalize_event(event, repo)
+  def flatten_event(event, repo)
     lang = repo.language if repo != ""
     watchers = repo.watchers if repo != ""
     obj = {

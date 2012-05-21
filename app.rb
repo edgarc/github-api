@@ -44,5 +44,5 @@ EventMachine.run do     # <-- Changed EM to EventMachine
 
   end
 
-  App.run!()#{:port => 3000}
+  App.run!({:port => 3000})
 end
